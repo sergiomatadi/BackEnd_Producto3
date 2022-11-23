@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org"
+	  xmlns:sec="http://www.thyleaf.org/extras/spring-security">
+<head th:fragment="head">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>APP PARA CASA</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+
+	<!-- BARRA NAVEGACION -->
+	<header th:fragment="header">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" th:href="@{/}">CodersTeam</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active"><a class="nav-link" th:href="@{/}">Home
+							<span class="sr-only">(current)</span>
+					</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Menus</a></li>
+					
+
+				</ul>
+				<div>
+                    <p class= "mr-5 text-white">Bienvenid@ <span th:text="${nombreUsuario}"></span></p>
+                </div>
+                <form th:action="@{/logout}" class="form-inline my-2 my-lg-0">
+
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerrar
+                        sesión</button>
+                </form>
+            </div>
+		</nav>
+
+	</header>
+	<!-- CONTENIDO -->
+	
+	<!-- PIE DE PAGINA -->
+	
+	<footer th:fragment="footer"
+		class="footer mt-auto text-center text-white bg-dark fixed-bottom">
+		<div class="container_footer">
+			<p>CODERSTEAM</p>
+		</div>
+		<script type="text/javascript"
+			th:src="@{/js/jquery-3.2.1.slim.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+	</footer>
+
+</body>
+</html>
